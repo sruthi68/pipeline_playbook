@@ -9,7 +9,7 @@ node {
         sh 'ansible-playbook --check ./sampleFile.yml'
     }
     stage('Execute playbook') {
-        sh 'ansible-playbook sampleFile.yml'
+        sh 'ansible-playbook samplFile.yml'
     }
 }
 node {
