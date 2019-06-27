@@ -19,4 +19,5 @@ node {
     catch (exc) {
         echo "Pipeline status: ${currentBuild.currentResult}"
     }
+    echo "Pipeline status: ${currentBuild.currentResult}"
 }
