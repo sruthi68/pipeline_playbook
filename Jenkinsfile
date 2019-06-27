@@ -11,5 +11,6 @@ node {
     stage('Execute playbook') {
         sh 'ansible-playbook samplFile.yml'
     }
-    echo "Pipeline status: ${currentBuild.currentResult}"
 }
+echo "Pipeline status: ${currentBuild.currentResult}"
+
