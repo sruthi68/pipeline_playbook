@@ -13,7 +13,7 @@ node {
             sh 'ansible-playbok sampleFile.yml'
         }
         stage('Pipeline status') {
-            echo "Pipeline status: ${currentBuild.currentResult}"   
+            echo "Pipeline status: ${currentBuild.Result}"   
         }
     }
     catch (exc) {
