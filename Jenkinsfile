@@ -12,8 +12,8 @@ node {
         sh 'ansible-playbook samplFile.yml'
     }
 }
-node {
-    stage('Print status') {
+post {
+    always {
         echo "Pipeline status: ${currentBuild.currentResult}"
     }
 }
