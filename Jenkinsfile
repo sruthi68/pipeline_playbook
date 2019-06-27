@@ -11,7 +11,7 @@ node {
             sh 'ansible-playbook --check ./sampleFile.yml'
         }
         stage('Execute playbook') {
-            sh 'ansible-playbook samplFile.yml'
+            sh 'ansible-playbook sampleFile.yml'
         }
         currentBuild.currentresult = 'SUCCESS'
     }
