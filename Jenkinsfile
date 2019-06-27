@@ -5,4 +5,7 @@ node {
     stage('Syntax check for playbook') {
         sh 'ansible-playbook --syntax-check ./sampleFile.yml'
     }
+    stage('Check for playbook') {
+        sh 'ansible-playbook --check ./sampleFile.yml'
+    }
 }
