@@ -11,8 +11,11 @@ node {
         }
         stage('Execute playbook') {
             sh 'ansible-playbook samplFile.yml'
-    }
-    catch {
+        }
+        stage('Pipeline status') {
+            echo "Pipeline status: ${currentBuild.currentResult}"   
+        }
+    catch (Exception err) {
           echo "Pipeline status: ${currentBuild.currentResult}"   
     }
 }
