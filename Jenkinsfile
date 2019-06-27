@@ -16,7 +16,7 @@ node {
             echo "Pipeline status: ${currentBuild.currentResult}"   
         }
     }
-    catch (Exception err) {
+    catch (exc) {
         echo "Pipeline status: ${currentBuild.currentResult}"
     }
 }
