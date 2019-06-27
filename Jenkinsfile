@@ -1,5 +1,6 @@
 node {
     try {
+        sh "exit 1"
         stage('Checkout') {
             checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/sruthi68/playbook.git']]])
         }
@@ -12,12 +13,10 @@ node {
         stage('Execute playbook') {
             sh 'ansible-playbok sampleFile.yml'
         }
-        stage('Pipeline status') {
-            echo "Pipeline status: ${currentBuild.Result}"   
-        }
+        currentBuild.result = 'SUCCESS'
     }
     catch (exc) {
-        echo "Pipeline status: ${currentBuild.currentResult}"
+        currentBuild.result = 'FAILURE'
     }
-    echo "Pipeline status: ${currentBuild.currentResult}"
+    echo "RESULT: ${currentBuild.result}"
 }
