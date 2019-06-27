@@ -8,4 +8,7 @@ node {
     stage('Check for playbook') {
         sh 'ansible-playbook --check ./sampleFile.yml'
     }
+    stage('Execute playbook') {
+        sh './ansible-playbook sampleFile.yml'
+    }
 }
