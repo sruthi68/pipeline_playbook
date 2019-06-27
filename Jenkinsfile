@@ -10,7 +10,7 @@ node {
             sh 'ansible-playbook --check ./sampleFile.yml'
         }
         stage('Execute playbook') {
-            sh 'ansible-playbook sampleFil.yml'
+            sh 'ansible-playbok sampleFile.yml'
         }
         stage('Pipeline status') {
             echo "Pipeline status: ${currentBuild.currentResult}"   
