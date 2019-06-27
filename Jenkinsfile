@@ -1,6 +1,5 @@
 node {
     try {
-        sh "exit 1"
         stage('Checkout') {
             checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/sruthi68/playbook.git']]])
         }
@@ -18,5 +17,5 @@ node {
     catch (Exception err) {
         currentBuild.result = 'FAILURE'
     }
-    echo "RESULT: ${currentBuild.result}"
+    echo "Pipeline result: ${currentBuild.result}"
 }
