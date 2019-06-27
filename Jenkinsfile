@@ -13,10 +13,10 @@ node {
         stage('Execute playbook') {
             sh 'ansible-playbook samplFile.yml'
         }
-        currentBuild.result = 'SUCCESS'
+        currentBuild.currentresult = 'SUCCESS'
     }
     catch (Exception err) {
-        currentBuild.result = 'FAILURE'
+        currentBuild.currentresult = 'FAILURE'
     }
-    echo "RESULT: ${currentBuild.result}"
+    echo "RESULT: ${currentBuild.currentresult}"
 }
