@@ -9,9 +9,9 @@ node {
         sh 'ansible-playbook --check ./sampleFile.yml'
     }
     stage('Execute playbook') {
-        sh 'ansible-playbook sampleFile.yml'
+        sh 'ansible-playbook samplFile.yml'
     }
     stage('Print status') {
-        echo "Pipeline currentResult: ${currentBuild.currentResult}"
+        echo "Pipeline status: ${currentBuild.currentResult}"
     }
 }
